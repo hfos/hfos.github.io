@@ -1547,6 +1547,7 @@ pre .javascript .function {
 }
 .post-button {
   margin-top: 40px;
+  background: transparent;
 }
 .posts-expand .post-tags {
   margin-top: 40px;
@@ -1823,7 +1824,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3b75ed;
+  background: #28ff01;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2617,7 +2618,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(255,255,255,0.79);
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2676,7 +2677,7 @@ pre .javascript .function {
   box-sizing: border-box;
   padding: 40px;
   width: 700px;
-  background: #fff;
+  background: rgba(255,255,255,0.79);
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
@@ -2701,7 +2702,7 @@ pre .javascript .function {
   float: left;
   margin-top: 300px;
   width: 240px;
-  background: #f5f7f9;
+  background: rgba(255,255,255,0.79);
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2857,8 +2858,7 @@ pre .javascript .function {
 .sidebar-inner {
   box-sizing: border-box;
   width: 240px;
-  color: #555;
-  background: #fff;
+  background: rgba(255,255,255,0.79);
   box-shadow: initial;
   border-radius: initial;
   opacity: 0;
@@ -2989,5 +2989,50 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .post-body {
     text-align: justify;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url("/images/backg_pixiv59802244.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  body {
+    background-image: url("/images/backg_pixiv67449797.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  body {
+    background-image: url("/images/backg_pixiv67449797.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  body {
+    background-image: url("/images/backg_pixiv67449797.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+@media only screen and (max-width: 479px) {
+  body {
+    background-image: url("/images/backg_pixiv67449797.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
 }
