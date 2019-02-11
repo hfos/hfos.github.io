@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[目前为止遇到的一些坑]]></title>
     <url>%2F2019%2F02%2F11%2Fba_zi_ji_chun_ku_de_cao_zuo%2F</url>
-    <content type="text"><![CDATA[1. CF1114C 在将 $a^x (累乘中)$ 与 $n$ 进行比较时，有爆 $unsigned$ $long$ $long$ 的可能性因此，在进行比较时，应用除法代替乘法 错误写法：1if(lc*x&gt;n) break; 正确写法：1if((long double)lc&gt;(long double)n/(long double)x) break;]]></content>
+    <content type="text"><![CDATA[因为我很懒所以这个博客应该长时间不会更新 CF1114C 在将 $a^x (累乘中)$ 与 $n$ 进行比较时，有爆 $unsigned$ $long$ $long$ 的可能性因此，在进行比较时，应用除法代替乘法 错误写法：1if(lc*x&gt;n) break; 正确写法：1if((long double)lc&gt;(long double)n/(long double)x) break; CF1114D 记忆化搜索时，不要 直&nbsp;接 将“$0$”当做未访问到状态的特殊值极丑的解决方法：记忆化数组每个值$+2$，返回时$-2$ 错误写法：1234567891011121314151617signed dfs(signed l,signed r,signed mod)&#123; if(dp[l][r][mod]) &#123; return dp[l][r][mod]; &#125; //cout&lt;&lt;l&lt;&lt;' '&lt;&lt;r&lt;&lt;' '&lt;&lt;mod&lt;&lt;endl; if(l==r) &#123; return 0; &#125; if(mod==0)//l &#123; return dp[l][r][mod]=min( dfs(l+1,r,0)+(c[l]==c[l+1]?0:1) , dfs(l+1,r,1)+(c[l]==c[r]?0:1) ); &#125; return dp[l][r][mod]=min( dfs(l,r-1,0)+(c[r]==c[l]?0:1) , dfs(l,r-1,1)+(c[r-1]==c[r]?0:1) );&#125; 能A题但极丑的写法：1234567891011121314151617signed dfs(signed l,signed r,signed mod)&#123; if(dp[l][r][mod]) &#123; return dp[l][r][mod]-2; &#125; //cout&lt;&lt;l&lt;&lt;' '&lt;&lt;r&lt;&lt;' '&lt;&lt;mod&lt;&lt;endl; if(l==r) &#123; return 0; &#125; if(mod==0)//l &#123; return (dp[l][r][mod]=min( dfs(l+1,r,0)+(c[l]==c[l+1]?0:1) , dfs(l+1,r,1)+(c[l]==c[r]?0:1) )+2)-2; &#125; return (dp[l][r][mod]=min( dfs(l,r-1,0)+(c[r]==c[l]?0:1) , dfs(l,r-1,1)+(c[r-1]==c[r]?0:1) )+2)-2;&#125;]]></content>
       <categories>
         <category>OI</category>
       </categories>
