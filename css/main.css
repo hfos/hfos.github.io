@@ -1824,7 +1824,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #628af7;
+  background: #ff8561;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2991,48 +2991,10 @@ pre .javascript .function {
     text-align: justify;
   }
 }
-@media screen and (min-width: 1200px) {
-  body {
-    background-image: url("/images/backg_pixiv62043339.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-}
-@media screen and (min-width: 960px) and (max-width: 1199px) {
-  body {
-    background-image: url("/images/backg_pixiv67449797.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 959px) {
-  body {
-    background-image: url("/images/backg_pixiv67449797.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-}
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  body {
-    background-image: url("/images/backg_pixiv67449797.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-}
-@media only screen and (max-width: 479px) {
-  body {
-    background-image: url("/images/backg_pixiv67449797.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
+body {
+  background-image: url("/images/I_love_CHHC.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 25% 32%;
 }
