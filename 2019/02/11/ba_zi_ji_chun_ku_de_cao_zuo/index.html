@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="HFOs&#39;s blog">
 <meta property="og:description" content="1. CF1114C 在将 $a^x (累乘中)$ 与 $n$ 进行比较时，有爆 $unsigned$ $long$ $long$ 的可能性因此，在进行比较时，应用除法代替乘法  错误写法：1if(lc*x&amp;gt;n) break; 正确写法：1if((long double)lc&amp;gt;(long double)n/(long double)x) break;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-11T04:06:01.114Z">
+<meta property="og:updated_time" content="2019-02-11T04:26:02.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="目前为止遇到的一些坑">
 <meta name="twitter:description" content="1. CF1114C 在将 $a^x (累乘中)$ 与 $n$ 进行比较时，有爆 $unsigned$ $long$ $long$ 的可能性因此，在进行比较时，应用除法代替乘法  错误写法：1if(lc*x&amp;gt;n) break; 正确写法：1if((long double)lc&amp;gt;(long double)n/(long double)x) break;">
@@ -550,7 +550,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1107,6 +1107,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
