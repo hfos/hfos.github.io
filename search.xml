@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Noip2018普及组复赛爆零记]]></title>
-    <url>%2F2018%2F11%2F09%2Fnoip2018%2F</url>
-    <content type="text"><![CDATA[Day 010:30集合，吃了饭就乘上去南航的车乘车体验极差……路上一直晕车过了好久才到a，在南航闲逛+颓好长时间回到宾馆和舍友点了外卖吃……然后开始无聊刷p站 真不知道明天的复赛成绩将会怎样呢 Day 1先占坑，明天再写]]></content>
+    <title><![CDATA[目前为止遇到的一些坑]]></title>
+    <url>%2F2019%2F02%2F11%2Fba_zi_ji_chun_ku_de_cao_zuo%2F</url>
+    <content type="text"><![CDATA[1. CF1114C 在将 $a^x (累乘中)$ 与 $n$ 进行比较时，有爆 $unsigned$ $long$ $long$ 的可能性因此，在进行比较时，应用除法代替乘法 错误写法：1if(lc*x&gt;n) break; 正确写法：1if((long double)lc&gt;(long double)n/(long double)x) break;]]></content>
       <categories>
         <category>OI</category>
       </categories>
       <tags>
-        <tag>游记</tag>
+        <tag>OI</tag>
       </tags>
   </entry>
   <entry>
