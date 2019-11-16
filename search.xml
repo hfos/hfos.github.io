@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSP-S 2019 游记]]></title>
+    <url>%2F2019%2F11%2F17%2FfuckCCF2019%2F</url>
+    <content type="text"><![CDATA[这座城，多了一个退役的人 Day 0报道一如既往地在南航 因为有家长所以预期的面基没了 回酒店之后就开始颓，板子一个也没复习 在企鹅上和一位学长聊天，“备考了吗？” “怎么备考？”他立即回复 是的，事到如今，无论是怎样的复习备考仿佛都已成了无功的徒劳 回望过往的一年之内，我到底做了些什么，到底有没有真正投入自我的心血？如今，我唯一能够期望的，只有回望过往，问心无悔罢了 入梦了，考场上，注定又是一番不凡的拼搏 Day 1起床时方是六点半，不怎么早，但酒店的早饭供应还没完全开始，咖啡挺不错 前往考场 考挂了 $T1$ 一如既往的傻逼，唯一的坑点在 $n=64 , k=2^{64}-1$ 的情况 数据范围 $95$% 提示很醒目，很快搞过了 $T2$ 想了一会儿链的情况，发现可以线段树直接搞 然后很快发现这个做法可以推广 把这个问题转化一下 给一个空字符串，支持三种操作：快速在末尾插入/删除一个 $’(‘$ / $’)’$ 、快速回答这个字符串所有字串中的匹配的括号串 实现了这个，我们对原有的树 $dfs$ ，入栈时插入字符串中并且回答括号串数，出栈时删除 没想多少时间，感觉应该是比较显然的做法 结果花了 $2.5h+$ 写这个东西，写了近 $6k$ ，写完样例一个都过不去，调了好长时间终于能过第一个样例了，但是其他的还是过不去 $T3$考试开始没多久就看了，当时目标是菊花图和链的部分分 结果时间全部砸在了 $T2$ , $T3$ 啥都没写 结束了，估分 $100+0+0$ $nmdwsm$ 空留遗憾，不妨逝者如斯 估计 $Day$ $2$ 没得翻盘了，只能怪自己的幼稚，也告诫自己明天务必打满暴力分，切不可像今天一样挂掉]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>OI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[目前为止遇到的一些坑]]></title>
     <url>%2F2019%2F02%2F11%2Fba_zi_ji_chun_ku_de_cao_zuo%2F</url>
     <content type="text"><![CDATA[因为我很懒所以这个博客应该长时间不会更新 CF1114C 在将 $a^x (累乘中)$ 与 $n$ 进行比较时，有爆 $unsigned$ $long$ $long$ 的可能性因此，在进行比较时，应用除法代替乘法 错误写法：1if(lc*x&gt;n) break; 正确写法：1if((long double)lc&gt;(long double)n/(long double)x) break; CF1114D 记忆化搜索时，不要 直&nbsp;接 将“$0$”当做未访问到状态的特殊值极丑的解决方法：记忆化数组每个值$+2$，返回时$-2$ 错误写法：1234567891011121314151617signed dfs(signed l,signed r,signed mod)&#123; if(dp[l][r][mod]) &#123; return dp[l][r][mod]; &#125; //cout&lt;&lt;l&lt;&lt;' '&lt;&lt;r&lt;&lt;' '&lt;&lt;mod&lt;&lt;endl; if(l==r) &#123; return 0; &#125; if(mod==0)//l &#123; return dp[l][r][mod]=min( dfs(l+1,r,0)+(c[l]==c[l+1]?0:1) , dfs(l+1,r,1)+(c[l]==c[r]?0:1) ); &#125; return dp[l][r][mod]=min( dfs(l,r-1,0)+(c[r]==c[l]?0:1) , dfs(l,r-1,1)+(c[r-1]==c[r]?0:1) );&#125; 能A题但极丑的写法：1234567891011121314151617signed dfs(signed l,signed r,signed mod)&#123; if(dp[l][r][mod]) &#123; return dp[l][r][mod]-2; &#125; //cout&lt;&lt;l&lt;&lt;' '&lt;&lt;r&lt;&lt;' '&lt;&lt;mod&lt;&lt;endl; if(l==r) &#123; return 0; &#125; if(mod==0)//l &#123; return (dp[l][r][mod]=min( dfs(l+1,r,0)+(c[l]==c[l+1]?0:1) , dfs(l+1,r,1)+(c[l]==c[r]?0:1) )+2)-2; &#125; return (dp[l][r][mod]=min( dfs(l,r-1,0)+(c[r]==c[l]?0:1) , dfs(l,r-1,1)+(c[r-1]==c[r]?0:1) )+2)-2;&#125;]]></content>
