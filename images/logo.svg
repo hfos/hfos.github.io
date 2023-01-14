@@ -1,12 +1,18 @@
-<svg width="498" height="498" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="498" height="498">
  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
- <defs>
+ <defs xmlns="http://www.w3.org/2000/svg">
   <filter id="svg_1_blur" x="-50%" y="-50%" width="200%" height="200%">
    <feGaussianBlur in="SourceGraphic" stdDeviation="0.3"/>
   </filter>
+    <style xmlns="http://www.w3.org/2000/svg">
+    .prefix__cls-1{fill:#3e3a39}@media (prefers-color-scheme:dark){.prefix__cls-1{fill:#efefef}}
+    </style>
+    <!--TOOOOO MAKE IT WORK in the DARKMOOOOOOOOOOOOOODE!!!!!!!!!!!!! -->
  </defs>
- <g>
-  <title>Layer 1</title>
-  <path transform="rotate(2 244.068 249.082)" d="m443.96671,248.89633l-12.9,151.82411c-3.3,39.28316 -63.9,33.87811 -60.6,-4.72942l10,-118.23556l-41.1,2.21993c10.1,19.9794 15.8,42.37176 15.8,66.11539c0,39.76575 -16.1,75.96031 -42.3,102.79254l-39.3,-37.9319c57.9,-61.48249 13.1,-161.37947 -74,-161.37947c-25.9,0 -49.5,9.55536 -67.2,25.09489l-39.3,-37.9319c22,-19.9794 50.1,-33.87811 81.4,-38.80057l75.3,-82.71663l-42.6,-23.93667l-51.6,44.39866c-30,25.86704 -70.6,-17.85598 -40.5,-43.81954l68,-58.58692c9.8,-8.49366 24.1,-9.84492 35.5,-3.47468c0,0 139.3,78.08373 139.5,78.27676c16.2,9.7484 20.7,34.74678 6.1,50.7689l-58.4,64.18502l106.1,-5.69461c18.5,-1.06171 33.6,13.89871 32.1,31.56165l0,0.00002zm-64.9,-148.63898c28.1,0 50.9,-22.00629 50.9,-49.12808c0,-27.12179 -22.8,-49.12808 -50.9,-49.12808c-28.1,0 -50.9,22.00629 -50.9,49.12808c0,27.12179 22.8,49.12808 50.9,49.12808zm-179.4,342.35226c-80.6,0 -127.4,-87.44605 -82.7,-150.66588l-39.7,-38.31797c-20.8,25.38445 -33.2,57.52522 -33.2,92.36851c0,126.1501 150.7,194.38891 251.4,118.23556l-39.7,-38.31797c-16,10.52055 -35.3,16.69776 -56.1,16.69776l0,-0.00001z" id="svg_1" opacity="0.88" filter="url(#svg_1_blur)" stroke="null" stroke-width="0"/>
- </g>
+ <g xmlns="http://www.w3.org/2000/svg">
+
+<title>otto in wheelchair</title>
+  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path class="prefix__cls-1" opacity="0.88" d="M474.93 265 q-8 -9 -19 -9 l-136 0 q0 0 0 0 q-1 0 -1 0 q-13 -17 -30 -31 l72 -72 q8 -9 7 -21 q-2 -11 -13 -17 l-120 -64 q-13 -7 -26 2 l-72 56 q-16 15 -4 34 q15 16 34 4 l59 -46 l78 41 l-59 60 q-26 -10 -53 -10 q-68 2 -113 47 q-45 45 -47 113 q2 68 47 113 q45 45 113 47 q68 -2 113 -47 q45 -45 47 -113 q0 -25 -8 -48 l83 0 l-27 131 q-2 22 19 29 q3 0 5 0 q18 -1 24 -19 l32 -160 q1 -11 -5 -20 l0 0 ZM191.93 464 q-48 -1 -79 -33 l0 0 q-32 -31 -33 -79 q1 -48 33 -79 q31 -32 79 -33 q48 1 79 33 q32 31 33 79 q-1 48 -33 79 q-31 32 -79 33 l0 0 ZM399.93 96 q20 -1 34 -14 l0 0 q13 -14 14 -34 q-1 -20 -14 -34 q-14 -13 -34 -14 q-20 1 -34 14 q-13 14 -14 34 q1 20 14 34 q14 13 34 14 l0 0 Z"/>
+</g>
 </svg>
