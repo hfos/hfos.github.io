@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>格局决定成败</title>
-    <url>/2023/01/14/geJuJueDingChengBai/</url>
-    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
-</body></html>]]></content>
-  </entry>
-  <entry>
     <title>XJTU 2023小学期ACM个人题解</title>
     <url>/2023/06/29/xjtuacm/</url>
     <content><![CDATA[<html><head></head><body><p>很酷，只写思路。</p>
@@ -35,14 +29,19 @@
 <p>最大的难点是输出时候要用\n，不要用endl。</p>
 <h3 id="D-2"><a href="#D-2" class="headerlink" title="D"></a>D</h3><p>矩阵快速幂算出$ A = \begin{bmatrix} 0 &amp; 1 \newline 1 &amp; 1  \end{bmatrix} ^ {m-1}$，答案为 $2(A_{0,0}+A_{0,1})$。</p>
 <h3 id="E-2"><a href="#E-2" class="headerlink" title="E"></a>E</h3><p>维护一个01trie，这样我们就可以维护当前某一个二进制前缀的出现次数。</p>
-<p>从左到右遍历每一个 $a_i$，对某一个$a_i$，在01trie上匹配一遍，对于某一个已经匹配到的二进制前缀，若将要匹配1，则答案中计入该前缀+0的出现次数*当前位的key值。</p>
-<p>时空复杂度均为$O(32n)$。</p>
+<p>从左到右遍历每一个 $a_i$，对某一个$a_i$，在01trie上匹配一遍，对于某一个已经匹配到的二进制前缀，若将要匹配1，则答案中计入该前缀+0的出现次数*当前位的key值。时空复杂度均为$O(32n)$。</p>
 <h2 id="Day-04-搜索"><a href="#Day-04-搜索" class="headerlink" title="Day 04 搜索"></a>Day 04 搜索</h2><h3 id="A-3"><a href="#A-3" class="headerlink" title="A"></a>A</h3><p>从起点bfs一遍。</p>
 <h3 id="B-3"><a href="#B-3" class="headerlink" title="B"></a>B</h3><p>课上讲了。</p>
 <h3 id="C-3"><a href="#C-3" class="headerlink" title="C"></a>C</h3><p>dfs记忆化搜索。从每个点开始dfs一下，总复杂度是$O(nm)$的。</p>
-<h3 id="D-3"><a href="#D-3" class="headerlink" title="D"></a>D</h3><p>对所有标记为”p”和”@”的点求出两两之间的最短路。然后对他经过的”@”枚举全排列并取最优解。</p>
+<h3 id="D-3"><a href="#D-3" class="headerlink" title="D"></a>D</h3><p>对所有标记为 p和 @ 的点求出两两之间的最短路。然后枚举他经过的 @ 的全排列并取最优解。</p>
 <h3 id="E-3"><a href="#E-3" class="headerlink" title="E"></a>E</h3><p>课上讲了。</p>
 <h3 id="F-1"><a href="#F-1" class="headerlink" title="F"></a>F</h3><p>迭代加深搜就完了，测试一下$1…100$的数据，能跑过就交。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>格局决定成败</title>
+    <url>/2023/01/14/geJuJueDingChengBai/</url>
+    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
 </body></html>]]></content>
   </entry>
 </search>
