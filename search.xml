@@ -6,4 +6,43 @@
     <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
 </body></html>]]></content>
   </entry>
+  <entry>
+    <title>XJTU 2023小学期ACM个人题解</title>
+    <url>/2023/06/29/xjtuacm/</url>
+    <content><![CDATA[<html><head></head><body><p>很酷，只写思路。</p>
+<span id="more"></span>
+
+<h2 id="Day-01-绪论"><a href="#Day-01-绪论" class="headerlink" title="Day 01 绪论"></a>Day 01 绪论</h2><h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>答案分别为 $ O(n),O(1),O(n^2),O(n \log n) ,O(2^n) , O(n) , O(n) $。</p>
+<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p>对偶数和奇数分别排序。</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>分别考虑每个二进制位 $i$，对每个二进制位$ i $，数出 $ 1 … n $ 中该位为 1 的数的个数为 $x_i$ ，答案为 $ \sum_{i=0}^{32} x_i (n+1-x_i) {2}^i $。</p>
+<h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p>当最大的数大于n时，无解。</p>
+<p>当所有数为2时且n为奇数时，无解。</p>
+<p>其他情况都可以这么构造：只要没凑满 $n$ 就尽量用大的数凑。</p>
+<h3 id="E"><a href="#E" class="headerlink" title="E"></a>E</h3><p>折半枚举。</p>
+<h2 id="Day-02-贪心"><a href="#Day-02-贪心" class="headerlink" title="Day 02 贪心"></a>Day 02 贪心</h2><h3 id="A-1"><a href="#A-1" class="headerlink" title="A"></a>A</h3><p>尽量选小的数。</p>
+<h3 id="B-1"><a href="#B-1" class="headerlink" title="B"></a>B</h3><p>以 $b/a$ 为权排序，比较时写成 $b_i a_j &lt; b_j a_i $。</p>
+<h3 id="C-1"><a href="#C-1" class="headerlink" title="C"></a>C</h3><p>按照Day 01 D的方法凑</p>
+<h3 id="D-1"><a href="#D-1" class="headerlink" title="D"></a>D</h3><p>从左往右选，每次在能选的里选右端点尽可能右的。</p>
+<h3 id="E-1"><a href="#E-1" class="headerlink" title="E"></a>E</h3><p>先转化为曼哈顿距离。</p>
+<p>先考虑偶数的情况，考虑同时最大化两个维度。</p>
+<p>观察一维上取最优的情况为：按照坐标大小把点分成两堆，其中一堆比另一堆的每一个都大且两堆个数相同；这时各从两堆中任取点两两相连，最终答案是最优的。</p>
+<p>对于二维的情况，我们按照x维度分成a，b两个集合，按照y维度分成1，2两个集合。所有点就能被分入四个集合a1,a2,b1,b2，其中a1和b2等势，a2和b1等势。a1连b2，a2连b1，就能保证同时最大化两个维度的答案。</p>
+<p>奇数的情况，我们跑四次。每次调整分堆时的个数分配（小的比大的多1，或大的比小的多1），结果上相当于分别向a1,a2,b1,b2中的某个集合中比正常情况多放一个点。枚举那个比正常情况多1个点的集合中哪个点是奇点并实时更新答案，这样就可以考虑全所有点为奇点的情况。</p>
+<h3 id="F"><a href="#F" class="headerlink" title="F"></a>F</h3><p>不会，不如原神</p>
+<h2 id="Day-03-分治"><a href="#Day-03-分治" class="headerlink" title="Day 03 分治"></a>Day 03 分治</h2><h3 id="A-2"><a href="#A-2" class="headerlink" title="A"></a>A</h3><p>答案为 $1,2,4,8,16,…$。</p>
+<h3 id="B-2"><a href="#B-2" class="headerlink" title="B"></a>B</h3><p>二分即可。</p>
+<h3 id="C-2"><a href="#C-2" class="headerlink" title="C"></a>C</h3><p>用st表分别维护 &amp; 和 |。</p>
+<p>最大的难点是输出时候要用\n，不要用endl。</p>
+<h3 id="D-2"><a href="#D-2" class="headerlink" title="D"></a>D</h3><p>矩阵快速幂算出$ A = \begin{bmatrix} 0 &amp; 1 \newline 1 &amp; 1  \end{bmatrix} ^ {m-1}$，答案为 $2(A_{0,0}+A_{0,1})$。</p>
+<h3 id="E-2"><a href="#E-2" class="headerlink" title="E"></a>E</h3><p>维护一个01trie，这样我们就可以维护当前某一个二进制前缀的出现次数。</p>
+<p>从左到右遍历每一个 $a_i$，对某一个$a_i$，在01trie上匹配一遍，对于某一个已经匹配到的二进制前缀，若将要匹配1，则答案中计入该前缀+0的出现次数*当前位的key值。</p>
+<p>时空复杂度均为$O(32n)$。</p>
+<h2 id="Day-04-搜索"><a href="#Day-04-搜索" class="headerlink" title="Day 04 搜索"></a>Day 04 搜索</h2><h3 id="A-3"><a href="#A-3" class="headerlink" title="A"></a>A</h3><p>从起点bfs一遍。</p>
+<h3 id="B-3"><a href="#B-3" class="headerlink" title="B"></a>B</h3><p>课上讲了。</p>
+<h3 id="C-3"><a href="#C-3" class="headerlink" title="C"></a>C</h3><p>dfs记忆化搜索。从每个点开始dfs一下，总复杂度是$O(nm)$的。</p>
+<h3 id="D-3"><a href="#D-3" class="headerlink" title="D"></a>D</h3><p>对所有标记为”p”和”@”的点求出两两之间的最短路。然后对他经过的”@”枚举全排列并取最优解。</p>
+<h3 id="E-3"><a href="#E-3" class="headerlink" title="E"></a>E</h3><p>课上讲了。</p>
+<h3 id="F-1"><a href="#F-1" class="headerlink" title="F"></a>F</h3><p>迭代加深搜就完了，测试一下$1…100$的数据，能跑过就交。</p>
+</body></html>]]></content>
+  </entry>
 </search>
