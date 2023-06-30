@@ -41,7 +41,7 @@
 <h3 id="C-3"><a href="#C-3" class="headerlink" title="C"></a>C</h3><p>dfs记忆化搜索。从每个点开始dfs一下，总复杂度是$O(nm)$的。</p>
 <h3 id="D-3"><a href="#D-3" class="headerlink" title="D"></a>D</h3><p>对所有标记为 p和 @ 的点求出两两之间的最短路。然后枚举他经过的 @ 的顺序的全排列并取最优解。</p>
 <h3 id="E-3"><a href="#E-3" class="headerlink" title="E"></a>E</h3><p>课上讲了。</p>
-<h3 id="F-1"><a href="#F-1" class="headerlink" title="F"></a>F</h3><p>迭代加深搜就完了，测试一下$1…100$的数据，能跑过就交。</p>
+<h3 id="F-1"><a href="#F-1" class="headerlink" title="F"></a>F</h3><p>迭代加深搜索，深度很小，测试一下$1…100$的数据，能跑过就交。</p>
 </body></html>]]></content>
   </entry>
 </search>
