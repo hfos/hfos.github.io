@@ -33,7 +33,7 @@
 <h3 id="B-2"><a href="#B-2" class="headerlink" title="B"></a>B</h3><p>二分即可。</p>
 <h3 id="C-2"><a href="#C-2" class="headerlink" title="C"></a>C</h3><p>用st表分别维护 &amp; 和 |。</p>
 <p>最大的难点是输出时候要用\n，不要用endl。</p>
-<h3 id="D-2"><a href="#D-2" class="headerlink" title="D"></a>D</h3><p>矩阵快速幂算出$ A = \begin{bmatrix} 0 &amp; 1 \newline 1 &amp; 1  \end{bmatrix} ^ {M-1}$，答案为 $2(A_{0,0}+A_{0,1}) \text{ mod } K$。</p>
+<h3 id="D-2"><a href="#D-2" class="headerlink" title="D"></a>D</h3><p><strong>在模 $K$ 意义下</strong>，矩阵快速幂算出$ A = \begin{bmatrix} 0 &amp; 1 \newline 1 &amp; 1  \end{bmatrix} ^ {M-1}$，答案为 $2(A_{0,0}+A_{0,1}) \text{ mod } K$。</p>
 <h3 id="E-2"><a href="#E-2" class="headerlink" title="E"></a>E</h3><p>维护一个01trie，这样我们就可以维护当前某一个二进制前缀的出现次数。</p>
 <p>从左到右遍历每一个 $a_i$，对某一个$a_i$，在01trie上匹配一遍并加入，对于某一个已经匹配到的二进制前缀，若将要匹配1，则答案中计入该前缀+0的出现次数*当前位的key值。时空复杂度均为$O(32n)$。</p>
 <h2 id="Day-04-搜索"><a href="#Day-04-搜索" class="headerlink" title="Day 04 搜索"></a>Day 04 搜索</h2><h3 id="A-3"><a href="#A-3" class="headerlink" title="A"></a>A</h3><p>从起点bfs一遍。</p>
