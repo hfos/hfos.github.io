@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>格局决定成败</title>
-    <url>/2023/01/14/geJuJueDingChengBai/</url>
-    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
-</body></html>]]></content>
-  </entry>
-  <entry>
     <title>XJTU 2023小学期ACM个人题解</title>
     <url>/2023/06/29/xjtuacm/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
@@ -48,10 +42,16 @@
 <p>note: 暴力找 $\mathop{\mathop{\text{min}}\limits_{ k &gt; f_{i-1,j} }}\limits_{l_k \leq a_i \leq u_k } k$ 过了，但是好像可以卡掉。这个做法随便拿个数据结构优化一下可以做到对的复杂度。</p>
 <h3 id="C-4"><a href="#C-4" class="headerlink" title="C"></a>C</h3><p>取以下两个值的最大值：对区间 $1..N $做01背包的答案；对区间 $X..N$做01背包的答案加上$Q$。</p>
 <h3 id="D-4"><a href="#D-4" class="headerlink" title="D"></a>D</h3><p>首先判断无解：建图，首先把所有$P_{i,j}$向$P_{i+1,j-1},P_{i+1,j},P_{i+1,j+1}$连边，然后枚举所有 $A_{i,j}&lt;0$ 的点$P_{i,j}$，连有向边$(S,P_{i,j}),(P_{i,j},T)$。显然这是个DAG，求$S$到$T$的最大权路径，若该权$&gt;0$，则无解。</p>
-<p>然后很显然他至多使用一次传送门，然后做法很随便，可以建三张图跑三次，也可以不建。</p>
+<p>一个比较重要的发现是他至多使用一次传送门，然后做法很随便，可以建三张图跑三次，也可以不建。</p>
 <h3 id="E-4"><a href="#E-4" class="headerlink" title="E"></a>E</h3><p>对每次询问做一遍<a href="https://www.luogu.com.cn/problem/B3637">【Luogu B3637】最长上升子序列</a>，其实这里是最长不降子序列，但是做法一样。</p>
 <h3 id="F-2"><a href="#F-2" class="headerlink" title="F"></a>F</h3><p>首先我们不希望有0.5元这种面值，所以所有和钱相关的数值乘2。筛一遍我们手中的货币所有能表示出来的面值，然后01背包。</p>
 <h3 id="G"><a href="#G" class="headerlink" title="G"></a>G</h3><p>令 $f_i$ 为所有包含第$i$位，且对于$s_i=\text{l},\text{n},\text{c}$的情况，分别至少含一个子串为$\text{l}$、$\text{ln}$、$\text{lnc}$的，<strong>第$1…n$位的</strong>子序列的个数，转移方程 $f_i=\left \{  \begin{array}{ll} 2^{i-1} &amp;,s_i=\text{l} \newline \mathop{\mathop{\sum}\limits_{1 \leq j &lt; i}} \limits_{ s_j = \text l} f_j &amp;,s_i=\text{n} \newline \mathop{\mathop{\sum}\limits_{1 \leq j &lt; i}}\limits_{s_j = \text n } f_j &amp;,s_i=\text{c} \end{array} \right .$，实时记录两个变量分别表示 $\mathop{\mathop{\sum}\limits_{1 \leq j \leq i}} \limits_{ s_j = \text l} f_j ,\mathop{\mathop{\sum}\limits_{1 \leq j \leq i}} \limits_{ s_j = \text n} f_j $ 就可以 $O(n)$。最终答案为 $ \mathop{\sum}\limits_{s_i = \text{c}} f_i 2^{n-i} $。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>格局决定成败</title>
+    <url>/2023/01/14/geJuJueDingChengBai/</url>
+    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
 </body></html>]]></content>
   </entry>
 </search>
