@@ -42,6 +42,13 @@
 <h3 id="D-3"><a href="#D-3" class="headerlink" title="D"></a>D</h3><p>对所有标记为 p和 @ 的点求出两两之间的最短路。然后枚举他经过的 @ 的顺序的全排列并取最优解。</p>
 <h3 id="E-3"><a href="#E-3" class="headerlink" title="E"></a>E</h3><p>课上讲了。</p>
 <h3 id="F-1"><a href="#F-1" class="headerlink" title="F"></a>F</h3><p>迭代加深搜索，深度很小，测试一下$1…100$的数据，能跑过就交。</p>
+<h2 id="Day-05-dp"><a href="#Day-05-dp" class="headerlink" title="Day 05 dp"></a>Day 05 dp</h2><h3 id="A-4"><a href="#A-4" class="headerlink" title="A"></a>A</h3><p>令 $f_i$ 表示控制第 $1…i$ 个结点的最小时间，状态转移方程 $f_i=\mathop{\text{min}}\limits_{1 \leq j &lt; i} \big \{ f_j + v \mathop{\sum}\limits_{j &lt; k \leq i} a_k + t + 2 \mathop{\sum}\limits_{j+1&lt;k \leq i}a_k \big \} $，答案为 $f_n$。</p>
+<h3 id="B-4"><a href="#B-4" class="headerlink" title="B"></a>B</h3><p>令 $f_{i,j}$ 表示前 $1…i$ 个相位束中，有 $j$ 个在射击时关闭了所有护盾，此时牺牲的最少的护盾数，状态转移方程 $ f_{i,j} = \text{min} \{  f_{i-1,j-1}, \mathop{\text{min}}\limits_{ k &gt; f_{i-1,j} \text{ }\wedge \text{ }l_k \leq a_i \leq u_k } k \} $，答案为 $ \mathop{\text{min}}\limits_{f_{m,j}\leq n} j $。</p>
+<h3 id="C-4"><a href="#C-4" class="headerlink" title="C"></a>C</h3><p>取以下两个值的最大值：对区间 $1..N $做01背包的答案；对区间 $X..N$做01背包的答案加上$Q$。</p>
+<h3 id="D-4"><a href="#D-4" class="headerlink" title="D"></a>D</h3><p>首先判断无解：建图，首先把所有$P_{i,j}$向$P_{i+1,j-1},P_{i+1,j},P_{i+1,j+1}$连边，然后枚举所有 $A_{i,j}&lt;0$ 的点$P_{i,j}$，连有向边$(S,P_{i,j}),(P_{i,j},T)$。显然这是个DAG，求S到T的最大权路径，若该权$&gt;0$，则无解。</p>
+<p>然后很显然他至多使用一次传送门，然后做法很随便，可以建三张图跑三次，也可以不建。</p>
+<h3 id="E-4"><a href="#E-4" class="headerlink" title="E"></a>E</h3><p>首先我们不希望有0.5元这种面值，所以所有和钱相关的数值乘2。筛一遍我们手中的货币所有能表示出来的面值，然后01背包。</p>
+<h3 id="F-2"><a href="#F-2" class="headerlink" title="F"></a>F</h3><p>令 $f_i$ 为所有包含第$i$位且至少含一个子串为$lnc$的，<strong>第$1…n$位的</strong>子序列的个数，转移方程 $f_i=\left \{  \begin{array}{ll} 2^{i-1} &amp;,s_i=l \newline \mathop{\sum}\limits_{1 \leq j \leq i \wedge s_j = l} f_j &amp;,s_i=n \newline \mathop{\sum}\limits_{1 \leq j \leq i \wedge s_j = n} f_j &amp;,s_i=c \end{array} \right .$，实时记录两个变量分别表示 $\mathop{\sum}\limits_{1 \leq j \leq i \wedge s_j = l} f_j ,\mathop{\sum}\limits_{1 \leq j \leq i \wedge s_j = n} f_j $ 就可以 $O(n)$。最终答案为 $ \mathop{\sum}\limits_{s_i = c} f_i 2^{n-i} $。</p>
 </body></html>]]></content>
   </entry>
 </search>
