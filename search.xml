@@ -15,7 +15,7 @@
 
 <h2 id="Day-01-绪论"><a href="#Day-01-绪论" class="headerlink" title="Day 01 绪论"></a>Day 01 绪论</h2><h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>答案分别为 $ O(n)$，$O(1)$，$O(n^2)$，$O(n \log n) $，$O(2^n) $，$ O(n) $，$ O(n) $。</p>
 <h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p>对偶数和奇数分别排序。</p>
-<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>分别考虑每个二进制位 $i$，对每个二进制位$ i $，数出 $ 1 … n $ 中该位为 1 的数的个数为 $x_i$ ，答案为 $ \sum_{i=0}^{32} x_i (n+1-x_i) {2}^i $。</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>分别考虑每个二进制位 $i$，对每个二进制位$ i $，数出 $ 1 … n $ 中该位为 1 的数的个数为 $x_i$ ，答案为 $ \mathop{\sum}\limits_{i=0}^{32} x_i (n+1-x_i) {2}^i $。</p>
 <h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p>当最大的数大于$n$时，无解。</p>
 <p>当所有数为$2$时且$n$为奇数时，无解。</p>
 <p>其他情况都可以这么构造：只要没凑满 $n$ 就尽量用大的数凑。</p>
@@ -52,6 +52,12 @@
 <h3 id="E-4"><a href="#E-4" class="headerlink" title="E"></a>E</h3><p>对每次询问做一遍<a href="https://www.luogu.com.cn/problem/B3637">【Luogu B3637】最长上升子序列</a>，其实这里是最长不降子序列，但是做法一样。</p>
 <h3 id="F-2"><a href="#F-2" class="headerlink" title="F"></a>F</h3><p>首先我们不希望有0.5元这种面值，所以所有和钱相关的数值乘2。筛一遍我们手中的货币所有能表示出来的面值，然后01背包。</p>
 <h3 id="G"><a href="#G" class="headerlink" title="G"></a>G</h3><p>令 $f_i$ 为所有包含第$i$位，且对于$s_i=\text{l},\text{n},\text{c}$的情况，分别至少含一个子串为$\text{l}$、$\text{ln}$、$\text{lnc}$的，<strong>第$1…n$位的</strong>子序列的个数，转移方程 $f_i=\left \{  \begin{array}{rl} 2^{i-1}\text{ mod } 10^9 +7 &amp;,s_i=\text{l} \newline \mathop{\mathop{\sum}\limits_{1 \leq j &lt; i}} \limits_{ s_j = \text l} f_j \text{ mod } 10^9 +7  &amp;,s_i=\text{n} \newline \mathop{\mathop{\sum}\limits_{1 \leq j &lt; i}}\limits_{s_j = \text n } f_j \text{ mod } 10^9 +7  &amp;,s_i=\text{c} \end{array} \right .$，实时记录两个变量分别表示 $\mathop{\mathop{\sum}\limits_{1 \leq j \leq i}} \limits_{ s_j = \text l} f_j \text{ mod } 10^9 +7  $，$\mathop{\mathop{\sum}\limits_{1 \leq j \leq i}} \limits_{ s_j = \text n} f_j \text{ mod } 10^9 +7  $ 就可以 $O(n)$。最终答案为 $ \mathop{\sum}\limits_{s_i = \text{c}} f_i \text{ } 2^{|s|-i} \text{ mod } 10^9 +7  $。</p>
+<h2 id="Day-06-基础ds"><a href="#Day-06-基础ds" class="headerlink" title="Day 06 基础ds"></a>Day 06 基础ds</h2><h3 id="A-5"><a href="#A-5" class="headerlink" title="A"></a>A</h3><p>典中典之开个栈，从后往前枚举$i=n…1$。$s_i=\text{)}$时将$i$入栈，$s_i=\text{(}$时让栈顶出栈。最后把出栈序列倒过来输出一遍。</p>
+<h3 id="B-5"><a href="#B-5" class="headerlink" title="B"></a>B</h3><p>双向链表。</p>
+<h3 id="C-5"><a href="#C-5" class="headerlink" title="C"></a>C</h3><p>dfs求连通块大小。</p>
+<h3 id="D-5"><a href="#D-5" class="headerlink" title="D"></a>D</h3><p>dp，转移方程$f_i=\mathop{\mathop{\sum}\limits_{1\leq j &lt; i}}\limits_{| a_i-a_j | \leq d} f_j \text{ mod } 998244353$，开个线段树维护区间和，结点$k$的值为$\mathop{\mathop{\sum}\limits_{1 \leq j \leq i}}\limits_{a_j=k} f_j$，每次转移时查询线段树上区间$[a_i -d,a_i+d]$的和再更新$a_i$点处的值就可以$O(n\log n)$。</p>
+<h3 id="E-5"><a href="#E-5" class="headerlink" title="E"></a>E</h3><p>这玩意没有结合律，所以我们分块，每次操作2和操作3就暴力修改整块。</p>
+<h3 id="F-3"><a href="#F-3" class="headerlink" title="F"></a>F</h3><p>校赛题解讲得很好。</p>
 </body></html>]]></content>
   </entry>
 </search>
