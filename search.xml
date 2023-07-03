@@ -45,7 +45,7 @@
 <h3 id="F-1"><a href="#F-1" class="headerlink" title="F"></a>F</h3><p>迭代加深搜索，深度很小，测试一下$1…100$的数据，能跑过就交。</p>
 <h2 id="Day-05-动态规划"><a href="#Day-05-动态规划" class="headerlink" title="Day 05 动态规划"></a>Day 05 动态规划</h2><h3 id="A-4"><a href="#A-4" class="headerlink" title="A"></a>A</h3><p>令 $f_i$ 表示控制第 $1…i$ 个结点的最小时间，状态转移方程 $f_i=\mathop{\text{min}}\limits_{1 \leq j &lt; i} \big \{ f_j + v \mathop{\sum}\limits_{\scriptsize{j &lt; k \leq i}} a_k + t + 2 \mathop{\sum}\limits_{\scriptsize{j+1&lt;k \leq i}}a_k \big \} $，其中$\sum a_k$可以用前缀和算，答案为 $f_n$。</p>
 <h3 id="B-4"><a href="#B-4" class="headerlink" title="B"></a>B</h3><p>令 $f_{i,j}$ 表示前 $1…i$ 个相位束中，有 $j$ 个在射击时关闭了所有护盾，此时牺牲的最少的护盾数，状态转移方程 $ f_{i,j} = \text{min} \{  f_{i-1,j-1}, \mathop{\mathop{\text{min}}\limits_{ k &gt; f_{i-1,j} }}\limits_{l_k \leq a_i \leq u_k } k \} $，答案为 $ \mathop{\text{min}}\limits_{f_{m,j}\leq n} j $。</p>
-<p>note: 暴力找 $\mathop{\mathop{\text{min}}\limits_{ k &gt; f_{i-1,j} }}\limits_{l_k \leq a_i \leq u_k } k$ 过了，但是好像可以卡掉。这个做法随便拿个数据结构优化一下可以做到对的复杂度。</p>
+<p><strong>note：</strong>暴力找 $\mathop{\mathop{\text{min}}\limits_{ k &gt; f_{i-1,j} }}\limits_{l_k \leq a_i \leq u_k } k$ 过了，但是好像可以卡掉。这个做法随便拿个数据结构优化一下可以做到对的复杂度。</p>
 <h3 id="C-4"><a href="#C-4" class="headerlink" title="C"></a>C</h3><p>取以下两个值的最大值：对区间 $1..N $做01背包的答案；对区间 $X..N$做01背包的答案加上$Q$。</p>
 <h3 id="D-4"><a href="#D-4" class="headerlink" title="D"></a>D</h3><p>首先判断无解：建图，首先把所有$P_{i,j}$向$P_{i+1,j-1},P_{i+1,j},P_{i+1,j+1}$连边，然后枚举所有 $A_{i,j}&lt;0$ 的点$P_{i,j}$，连有向边$(S,P_{i,j}),(P_{i,j},T)$。显然这是个DAG，求$S$到$T$的最大权路径，若该权$&gt;0$，则无解。</p>
 <p>一个比较重要的发现是他至多使用一次传送门，然后做法很随便，可以建三张图跑三次，也可以不建。</p>
@@ -57,6 +57,7 @@
 <h3 id="C-5"><a href="#C-5" class="headerlink" title="C"></a>C</h3><p>dfs求连通块大小，然后随便枚举一下。</p>
 <h3 id="D-5"><a href="#D-5" class="headerlink" title="D"></a>D</h3><p>dp，转移方程$f_i=\mathop{\mathop{\sum}\limits_{1\leq j &lt; i}}\limits_{| a_i-a_j | \leq d} f_j \text{ mod } 998244353$，开个线段树维护区间和，结点$k$的值为$\mathop{\mathop{\sum}\limits_{1 \leq j \leq i}}\limits_{a_j=k} f_j\text{ mod } 998244353$，每次转移时查询线段树上区间$[a_i -d,a_i+d]$的和再更新$a_i$点处的值就可以$O(n\log n)$。</p>
 <h3 id="E-5"><a href="#E-5" class="headerlink" title="E"></a>E</h3><p>这玩意没有结合律，所以我们分块，每次操作2和操作3就暴力修改整块。</p>
+<p><strong>note：</strong> 事实上也可以线段树。</p>
 <h3 id="F-3"><a href="#F-3" class="headerlink" title="F"></a>F</h3><p>校赛题解讲得很好。</p>
 </body></html>]]></content>
   </entry>
