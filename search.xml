@@ -59,6 +59,13 @@
 <h3 id="E-5"><a href="#E-5" class="headerlink" title="E"></a>E</h3><p>这玩意没有结合律。我们分块。考虑到运算数只有两种，我们大力记录$f_{i,0}$，$f_{i,1}$分别表示$0/1$ 依次 $\bigodot $ 第$i$块内所有元素的结果，每次操作1就依次暴力$ \bigodot $左端散块、整块和右端散块，其中$ \bigodot $整块的操作应当使用我们先前计算的$f_{i,0/1}$，操作2和操作3暴力修改一块。</p>
 <p><strong>note：</strong>事实上也可以线段树。</p>
 <h3 id="F-3"><a href="#F-3" class="headerlink" title="F"></a>F</h3><p>校赛题解讲得很好。</p>
+<h2 id="Day-07-图论"><a href="#Day-07-图论" class="headerlink" title="Day 07 图论"></a>Day 07 图论</h2><p>课上基本上把题目做法都讲过了，课后大力贴板子过题太爽了。</p>
+<h3 id="A-6"><a href="#A-6" class="headerlink" title="A"></a>A</h3><p>建图跑Dijkstra求出所有$dis(1,i)$，再把所有边反向一下，重新建个新图跑Dijkstra求出所有$dis(i,1)$。</p>
+<h3 id="B-6"><a href="#B-6" class="headerlink" title="B"></a>B</h3><p>他是DAG所以很套路。不过这题数据很小所以直接贴了个spfa板子过了。</p>
+<h3 id="C-6"><a href="#C-6" class="headerlink" title="C"></a>C</h3><p>该图邻接矩阵为$M$，倍增求$M^{k} \text{ mod } 998244353$，答案为$M_{1,n}$。</p>
+<h3 id="D-6"><a href="#D-6" class="headerlink" title="D"></a>D</h3><p>算每条边的贡献</p>
+<h3 id="E-6"><a href="#E-6" class="headerlink" title="E"></a>E</h3><p>求出最大生成树，然后查询树上路径的边权最小值。因为这题数据很小所以直接贴了一个树剖板子过了。</p>
+<h3 id="F-4"><a href="#F-4" class="headerlink" title="F"></a>F</h3><p>给查询按照权值 $w_i$ 从大到小排序，然后对询问可以单调加边，用个并查集维护当前连通块权值总和。</p>
 </body></html>]]></content>
   </entry>
 </search>
