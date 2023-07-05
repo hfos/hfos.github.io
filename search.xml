@@ -67,7 +67,7 @@
 <h3 id="E-6"><a href="#E-6" class="headerlink" title="E"></a>E</h3><p>求出最大生成树，然后查询树上路径的边权最小值。因为这题数据很小所以直接贴了一个树剖板子过了。</p>
 <h3 id="F-4"><a href="#F-4" class="headerlink" title="F"></a>F</h3><p>给查询按照权值 $w_i$ 从大到小排序，然后对询问可以单调加边，用个并查集维护当前连通块权值总和。</p>
 <h2 id="Day-08-数学"><a href="#Day-08-数学" class="headerlink" title="Day 08 数学"></a>Day 08 数学</h2><p>又是课上讲题。非常好安排，爱来自数学低手。</p>
-<h3 id="A-7"><a href="#A-7" class="headerlink" title="A"></a>A</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">s = <span class="built_in">input</span>().split()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(s[<span class="number">0</span>]) * <span class="built_in">int</span>(s[<span class="number">1</span>]) %<span class="built_in">int</span>(s[<span class="number">2</span>]))</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="A-7"><a href="#A-7" class="headerlink" title="A"></a>A</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">s = <span class="built_in">input</span>().split()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(s[<span class="number">0</span>]) * <span class="built_in">int</span>(s[<span class="number">1</span>]) % <span class="built_in">int</span>(s[<span class="number">2</span>]))</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="B-7"><a href="#B-7" class="headerlink" title="B"></a>B</h3><p>若 $x \nmid y$，输出$0$。</p>
 <p>否则令 $k=\frac{y}{x}$，枚举其所有使得$\gcd (i,\frac{k}{i})=1$的因子$i$。</p>
