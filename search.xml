@@ -63,7 +63,7 @@
 <h3 id="A-6"><a href="#A-6" class="headerlink" title="A"></a>A</h3><p>建图跑Dijkstra求出所有$dis(1,i)$，再把所有边反向一下，重新建个新图跑Dijkstra求出所有$dis(i,1)$。</p>
 <h3 id="B-6"><a href="#B-6" class="headerlink" title="B"></a>B</h3><p>他是DAG所以很套路。不过这题数据很小所以直接贴了个spfa板子过了。</p>
 <h3 id="C-6"><a href="#C-6" class="headerlink" title="C"></a>C</h3><p>该图邻接矩阵为$M$，倍增求$M^{k} \text{ mod } 998244353$，答案为$M_{1,n}$。</p>
-<h3 id="D-6"><a href="#D-6" class="headerlink" title="D"></a>D</h3><p>算每条边的贡献</p>
+<h3 id="D-6"><a href="#D-6" class="headerlink" title="D"></a>D</h3><p>算每条边的贡献。</p>
 <h3 id="E-6"><a href="#E-6" class="headerlink" title="E"></a>E</h3><p>求出最大生成树，然后查询树上路径的边权最小值。因为这题数据很小所以直接贴了一个树剖板子过了。</p>
 <h3 id="F-4"><a href="#F-4" class="headerlink" title="F"></a>F</h3><p>给查询按照权值 $w_i$ 从大到小排序，然后对询问可以单调加边，用个并查集维护当前连通块权值总和。</p>
 <h2 id="Day-08-数学"><a href="#Day-08-数学" class="headerlink" title="Day 08 数学"></a>Day 08 数学</h2><p>又是课上讲题。非常好安排，爱来自数学低手。</p>
@@ -75,6 +75,16 @@
 <h3 id="D-7"><a href="#D-7" class="headerlink" title="D"></a>D</h3><p>走的路径必然是 $x \rightarrow \gcd (x,y) \rightarrow y$。</p>
 <h3 id="E-7"><a href="#E-7" class="headerlink" title="E"></a>E</h3><p>重要结论：$\gcd (x,y)=x$。</p>
 <p>做法是，初始化$y \leftarrow x$，然后枚举$1…10^7$内所有素数$p_i$，若$\frac{n}{x p_i} \geq 1$，则$y \leftarrow y p_i \bmod 920011128$。</p>
+<h2 id="Day-09-字符串"><a href="#Day-09-字符串" class="headerlink" title="Day 09 字符串"></a>Day 09 字符串</h2><p>咕咕咕。</p>
+<h2 id="Day-10"><a href="#Day-10" class="headerlink" title="Day 10"></a>Day 10</h2><p>非常好送分捞人。</p>
+<h2 id="期末考试"><a href="#期末考试" class="headerlink" title="期末考试"></a>期末考试</h2><p>最简单的一集。</p>
+<h3 id="A-8"><a href="#A-8" class="headerlink" title="A"></a>A</h3><p>暴力枚举。</p>
+<h3 id="B-8"><a href="#B-8" class="headerlink" title="B"></a>B</h3><p>从小到大排序后序列为$v$，答案是 $\mathop{\sum}\limits_{1\leq i \leq n}{\frac{v_i}{v_{n+i}}}$。</p>
+<h3 id="C-8"><a href="#C-8" class="headerlink" title="C"></a>C</h3><p>状压dp。</p>
+<h3 id="D-8"><a href="#D-8" class="headerlink" title="D"></a>D</h3><p>大力爆搜，随便剪枝。</p>
+<h3 id="E-8"><a href="#E-8" class="headerlink" title="E"></a>E</h3><p>二分答案。</p>
+<p><img src="/images/bugcat.gif" alt="可爱猫猫虫"><br><img src="/images/bugcat.gif" alt="可爱猫猫虫"><br><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
+<p>完结。</p>
 </body></html>]]></content>
   </entry>
 </search>
