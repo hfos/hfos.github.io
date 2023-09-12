@@ -10,7 +10,7 @@
     <title>“一种轻量级平衡树”学习笔记</title>
     <url>/2023/09/12/splay_alternative_tech/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
-<p>学习并实现了<a href="%22https://www.luogu.com.cn/blog/command-block/yi-zhong-qing-liang-ji-ping-heng-shu%22">一种轻量级平衡树</a>。</p>
+<p>学习并实现了<a href="https://www.luogu.com.cn/blog/command-block/yi-zhong-qing-liang-ji-ping-heng-shu">一种轻量级平衡树</a>。</p>
 <span id="more"></span>
 
 <p>一句话描述：对一个leafy结构的树，当需要分离出区间$[l,r]$时，我们保留分别严格包含于$[1,l),[l,r],(r,n]$的极大区间，删除其他结点。然后通过将这些极大区间视为叶子，暴力重构为完全二叉树来还原该树结构。</p>
@@ -21,7 +21,7 @@
     <title>XJTU 2023小学期ACM个人题解</title>
     <url>/2023/06/29/xjtuacm/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
-<p>很酷，只写思路。</p>
+<p>很酷，只写做法。</p>
 <span id="more"></span>
 
 <h2 id="Day-01-绪论"><a href="#Day-01-绪论" class="headerlink" title="Day 01 绪论"></a>Day 01 绪论</h2><h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>答案分别为 $ O(n)$，$O(1)$，$O(n^2)$，$O(n \log n) $，$O(2^n) $，$ O(n) $，$ O(n) $。</p>
