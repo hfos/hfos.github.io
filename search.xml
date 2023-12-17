@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>格局决定成败</title>
+    <url>/2023/01/14/geJuJueDingChengBai/</url>
+    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
+</body></html>]]></content>
+  </entry>
+  <entry>
     <title>“一种轻量级平衡树”学习笔记</title>
     <url>/2023/09/12/splay_alternative_tech/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
@@ -19,16 +25,12 @@
 </body></html>]]></content>
   </entry>
   <entry>
-    <title>格局决定成败</title>
-    <url>/2023/01/14/geJuJueDingChengBai/</url>
-    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>Great Ideas in Theoretical Computer Science 自学记录</title>
+    <title>持续跟进：低智商人员如何自学 Great Ideas in Theoretical Computer Science</title>
     <url>/2023/12/17/tcsdiy1/</url>
     <content><![CDATA[<html><head></head><body><p>感觉太失败了，需要一些学习。</p>
 <p>开一个坑试图让自己填。</p>
+<span id="more"></span>
+
 <h2 id="Deterministic-Finite-Automata"><a href="#Deterministic-Finite-Automata" class="headerlink" title="Deterministic Finite Automata"></a>Deterministic Finite Automata</h2><p>A Deterministic Finite Automata (DFA) $M$ is a 5-tuple</p>
 <p>$$M=(Q, \Sigma , \delta , q_0 ,F)$$</p>
 <p>where</p>
@@ -37,10 +39,10 @@
 <li>$\Sigma$ is the <em>alphabet</em>;</li>
 <li>$\delta: Q \times \Sigma \rightarrow Q$ is the <em>transition function</em>; </li>
 <li>$q_0 \in Q$ is the <em>start time</em>;</li>
-<li>$F \sube Q$ is the <em>set of accepting states</em>.</li>
+<li>$F \subseteq Q$ is the <em>set of accepting states</em>.</li>
 </ul>
 <h3 id="Language-decided-by-a-DFA"><a href="#Language-decided-by-a-DFA" class="headerlink" title="Language decided by a DFA"></a>Language decided by a DFA</h3><p>Let $M$ be a DFA. Therefore</p>
-<p>$$L(M)={x\in \Sigma^* :M(x)\text{ accepts}} \sube \Sigma^*$$</p>
+<p>$$L(M)={x\in \Sigma^* :M(x)\text{ accepts}} \subseteq \Sigma^*$$</p>
 <p>is the Language $M$ <em>decides</em>.</p>
 </body></html>]]></content>
   </entry>
