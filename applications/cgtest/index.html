@@ -1,0 +1,191 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+    </style>
+    <script src="pixi.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let app = new PIXI.Application({
+            width: 256, height: 256, antialias: true,
+            transparent: false
+        });
+        app.renderer.view.style.position = "absolute";
+        app.renderer.view.style.display = "block";
+        app.renderer.autoResize = true;
+        app.renderer.resize(window.innerWidth, window.innerHeight);
+
+        app.renderer.backgroundColor = 0x000000;
+
+        document.body.appendChild(app.view);
+
+
+        app.ticker.add(delta => gameLoop(delta));
+
+        let tstyle = new PIXI.TextStyle({
+            fontFamily: "Consolas",
+            fontSize: 16,
+            fill: "white",
+        });
+
+        let message = new PIXI.Text("FPS: 60", tstyle);
+        message.position.set(20, 20);
+        app.stage.addChild(message);
+
+
+        gmp = new PIXI.Graphics();
+
+
+        app.stage.addChild(gmp);
+
+
+        let N = 200;
+
+        let mp = [];
+
+        let nmp = [];
+
+        let rmp = [];
+
+        for (let i = 0; i <= N; ++i) {
+            let tmp = [];
+            for (let j = 0; j <= N; ++j) {
+                tmp.push([0, 0]);
+            }
+            mp.push(tmp);
+        }
+
+        for (let i = 0; i <= N; ++i) {
+            let tmp = [];
+            for (let j = 0; j <= N; ++j) {
+                tmp.push([0, 0]);
+            }
+            nmp.push(tmp);
+        }
+
+        for (let i = 0; i <= N; ++i) {
+            let tmp = [];
+            for (let j = 0; j <= N; ++j) {
+                tmp.push([0, 0]);
+            }
+            rmp.push(tmp);
+        }
+
+
+        const onMouseMove = (event) => {
+            const np = event.data.getLocalPosition(gmp.parent);
+            let dx = event.data.originalEvent.movementX;
+            let dy = event.data.originalEvent.movementY;
+            let d = Math.sqrt(dx * dx + dy * dy);
+            dx = dx / d;
+            dy = dy / d;
+            const X = window.innerWidth, Y = window.innerHeight
+            let nx = np.x - X / 2 + N / 2;
+            let ny = np.y - Y / 2 + N / 2;
+            if (nx > 0 && nx < N && ny > 0 && ny < N) {
+                for (let x = 1; x < N; ++x) {
+                    for (let y = 1; y < N; ++y) {
+                        if ((x - nx) * (x - nx) + (y - ny) * (y - ny) < 25) {
+                            mp[x][y][0] += 50 * dx;
+                            mp[x][y][1] += 50 * dy;
+                        }
+                    }
+                }
+            }
+        };
+
+        gmp.interactive = true;
+        gmp.on('mousemove', onMouseMove);
+
+        function getxy(x, y) {
+            let xx = Math.trunc(x), yy = Math.trunc(y);
+            let dx = x - xx, dy = y - yy;
+            return [mp[xx][yy][0] * (1 - dx) * (1 - dy) + mp[xx + 1][yy][0] * dx * (1 - dy) + mp[xx][yy + 1][0] * (1 - dx) * dy + mp[xx + 1][yy + 1][0] * dx * dy,
+            mp[xx][yy][1] * (1 - dx) * (1 - dy) + mp[xx + 1][yy][1] * dx * (1 - dy) + mp[xx][yy + 1][1] * (1 - dx) * dy + mp[xx + 1][yy + 1][1] * dx * dy];
+        }
+
+        function boundary() {
+            for (let y = 1; y < N; ++y) {
+                mp[0][y][0] = -mp[1][y][0];
+                mp[0][y][1] = -mp[1][y][1];
+                mp[N][y][0] = -mp[N - 1][y][0];
+                mp[N][y][1] = -mp[N - 1][y][1];
+            }
+
+            for (let x = 1; x < N; ++x) {
+                mp[x][0][0] = -mp[x][1][0];
+                mp[x][0][1] = -mp[x][1][1];
+                mp[x][N][0] = -mp[x][N - 1][0];
+                mp[x][N][1] = -mp[x][N - 1][1];
+            }
+        }
+
+
+        function advection(delta) {
+            for (let x = 1; x < N; ++x) {
+                for (let y = 1; y < N; ++y) {
+                    let xx = Math.max(Math.min(x - mp[x][y][0] * delta / 60, N - 1.01), 1);
+                    let yy = Math.max(Math.min(y - mp[x][y][1] * delta / 60, N - 1.01), 1);
+                    nmp[x][y] = getxy(xx, yy);
+                }
+            }
+            let tmp = mp;
+            mp = nmp;
+            nmp = tmp;
+        }
+
+        function diffusion(delta) {
+            for (let x = 1; x < N; ++x) {
+                for (let y = 1; y < N; ++y) {
+
+                }
+            }
+        }
+
+        function projection(delta) {
+
+        }
+
+
+        function gameLoop(delta) {
+
+            message.Text = "FPS: " + String(Math.floor(60 / delta));
+
+            advection(delta);
+
+            boundary();
+
+            gmp.clear();
+
+            const X = window.innerWidth, Y = window.innerHeight;
+
+            for (let x = 0; x <= N; ++x) {
+                for (let y = 0; y <= N; ++y) {
+                    gmp.beginFill(Math.min(Math.trunc(Math.sqrt(mp[x][y][0] * mp[x][y][0] + mp[x][y][1] * mp[x][y][1])), 255) * (0x010101), 1);
+                    gmp.drawRect(x + X / 2 - N / 2, y + Y / 2 - N / 2, 1, 1);
+                }
+            }
+
+        }
+
+        window.addEventListener('resize', resize);
+
+        function resize() {
+
+            app.renderer.resize(window.innerWidth, window.innerHeight);
+        }
+
+        window.onload = function () {
+            resize();
+        };
+
+    </script>
+
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
