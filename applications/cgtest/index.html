@@ -45,7 +45,7 @@
         app.stage.addChild(gmp);
 
 
-        let N = 200;
+        let N = 120;
 
         let mp = [];
 
@@ -234,8 +234,16 @@
 
             const X = window.innerWidth, Y = window.innerHeight;
 
-            for (let x = 0; x <= N; ++x) {
-                for (let y = 0; y <= N; ++y) {
+            for (let i = 1; i < N; ++i) {
+                gmp.beginFill(0x3f3f3f);
+                gmp.drawRect(X / 2 - N / 2, i + Y / 2 - N / 2, 1, 1);
+                gmp.drawRect(N + X / 2 - N / 2, i + Y / 2 - N / 2, 1, 1);
+                gmp.drawRect(i + X / 2 - N / 2, Y / 2 - N / 2, 1, 1);
+                gmp.drawRect(i + X / 2 - N / 2, N + Y / 2 - N / 2, 1, 1);
+            }
+
+            for (let x = 1; x < N; ++x) {
+                for (let y = 1; y < N; ++y) {
                     gmp.beginFill(Math.min(Math.trunc(Math.sqrt(mp[x][y][0] * mp[x][y][0] + mp[x][y][1] * mp[x][y][1]) * 10), 255) * (0x010101), 1);
                     gmp.drawRect(x + X / 2 - N / 2, y + Y / 2 - N / 2, 1, 1);
                 }
