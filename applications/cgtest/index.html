@@ -93,6 +93,7 @@
             let dx = event.data.originalEvent.movementX;
             let dy = event.data.originalEvent.movementY;
             let d = Math.sqrt(dx * dx + dy * dy);
+            if (d == 0) return;
             dx = dx / d;
             dy = dy / d;
             const X = window.innerWidth, Y = window.innerHeight
