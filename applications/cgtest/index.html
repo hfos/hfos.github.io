@@ -163,17 +163,30 @@
                         nmp[x][y][1] = (rmp[x + 1][y][1] + rmp[x][y + 1][1] + rmp[x - 1][y][1] + rmp[x][y - 1][1] + alpha * mp[x][y][1]) / beta;
                     }
                 }
+                for (let y = 1; y < N; ++y) {
+                    nmp[0][y][0] = -nmp[1][y][0];
+                    nmp[0][y][1] = -nmp[1][y][1];
+                    nmp[N][y][0] = -nmp[N - 1][y][0];
+                    nmp[N][y][1] = -nmp[N - 1][y][1];
+                }
+
+                for (let x = 1; x < N; ++x) {
+                    nmp[x][0][0] = -nmp[x][1][0];
+                    nmp[x][0][1] = -nmp[x][1][1];
+                    nmp[x][N][0] = -nmp[x][N - 1][0];
+                    nmp[x][N][1] = -nmp[x][N - 1][1];
+                }
             }
             let tmp = mp;
             mp = nmp;
             nmp = tmp;
-            boundary();
         }
 
         function projection() {
             for (let x = 1; x < N; ++x) {
                 for (let y = 1; y < N; ++y) {
                     qmp[x][y] = (mp[x + 1][y][0] - mp[x - 1][y][0] + mp[x][y + 1][1] - mp[x][y - 1][1]) / 2;
+                    nmp[x][y][0] = 0;
                 }
             }
             let alpha = -1, beta = 4;
@@ -184,27 +197,22 @@
                 for (let x = 1; x < N; ++x) {
                     for (let y = 1; y < N; ++y) {
                         nmp[x][y][0] = (rmp[x + 1][y][0] + rmp[x][y + 1][0] + rmp[x - 1][y][0] + rmp[x][y - 1][0] + alpha * qmp[x][y]) / beta;
-                        nmp[x][y][1] = (rmp[x + 1][y][1] + rmp[x][y + 1][1] + rmp[x - 1][y][1] + rmp[x][y - 1][1] + alpha * qmp[x][y]) / beta;
                     }
                 }
-            }
-            for (let y = 1; y < N; ++y) {
-                nmp[0][y][0] = nmp[1][y][0];
-                nmp[0][y][1] = nmp[1][y][1];
-                nmp[N][y][0] = nmp[N - 1][y][0];
-                nmp[N][y][1] = nmp[N - 1][y][1];
-            }
+                for (let y = 1; y < N; ++y) {
+                    nmp[0][y][0] = nmp[1][y][0];
+                    nmp[N][y][0] = nmp[N - 1][y][0];
+                }
 
-            for (let x = 1; x < N; ++x) {
-                nmp[x][0][0] = nmp[x][1][0];
-                nmp[x][0][1] = nmp[x][1][1];
-                nmp[x][N][0] = nmp[x][N - 1][0];
-                nmp[x][N][1] = nmp[x][N - 1][1];
+                for (let x = 1; x < N; ++x) {
+                    nmp[x][0][0] = nmp[x][1][0];
+                    nmp[x][N][0] = nmp[x][N - 1][0];
+                }
             }
             for (let x = 1; x < N; ++x) {
                 for (let y = 1; y < N; ++y) {
                     mp[x][y][0] -= (nmp[x + 1][y][0] - nmp[x - 1][y][0]) / 2;
-                    mp[x][y][1] -= (nmp[x][y + 1][1] - nmp[x][y - 1][1]) / 2;
+                    mp[x][y][1] -= (nmp[x][y + 1][0] - nmp[x][y - 1][0]) / 2;
                 }
             }
             boundary();
