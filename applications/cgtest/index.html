@@ -101,9 +101,9 @@
             let ny = np.y - Y / 2 + N / 2;
             for (let x = 1; x < N; ++x) {
                 for (let y = 1; y < N; ++y) {
-                    if ((x - nx) * (x - nx) + (y - ny) * (y - ny) < 25) {
-                        mp[x][y][0] += 50 * dx;
-                        mp[x][y][1] += 50 * dy;
+                    if ((x - nx) * (x - nx) + (y - ny) * (y - ny) < 50) {
+                        mp[x][y][0] += 20 * dx;
+                        mp[x][y][1] += 20 * dy;
                     }
                 }
             }
@@ -150,10 +150,10 @@
             boundary();
         }
 
-        let nu = 0.5;
+        let nu = 0.01;
 
         function diffusion(delta) {
-            let alpha = 1 / nu / delta, beta = 4 + 1 / nu / delta;
+            let alpha = 60 / nu / delta, beta = 4 + 60 / nu / delta;
             for (let i = 0; i < 30; ++i) {
                 let tmp = rmp;
                 rmp = nmp;
@@ -253,7 +253,7 @@
 
             for (let x = 1; x < N; ++x) {
                 for (let y = 1; y < N; ++y) {
-                    gmp.beginFill(Math.min(Math.trunc(Math.sqrt(mp[x][y][0] * mp[x][y][0] + mp[x][y][1] * mp[x][y][1]) * 10), 255) * (0x010101), 1);
+                    gmp.beginFill(Math.min(Math.trunc(Math.sqrt(mp[x][y][0] * mp[x][y][0] + mp[x][y][1] * mp[x][y][1]) * 2), 255) * (0x010101), 1);
                     gmp.drawRect(x + X / 2 - N / 2, y + Y / 2 - N / 2, 1, 1);
                 }
             }
