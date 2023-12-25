@@ -35,7 +35,7 @@
         });
 
         let message = new PIXI.Text("FPS: 60", tstyle);
-        message.position.set(20, 20);
+        message.position.set(20, 30);
         app.stage.addChild(message);
 
 
@@ -226,7 +226,7 @@
 
             if (cnt == 0) {
                 let tmessage = new PIXI.Text("FPS: " + String(Math.trunc(60 / delta)), tstyle);
-                tmessage.position.set(20, 20);
+                tmessage.position.set(20, 30);
                 app.stage.addChild(tmessage);
 
                 app.stage.removeChild(message);
@@ -272,6 +272,13 @@
         };
 
     </script>
+
+
+    <!--
+    <a style="left:5px;top:5px;position:absolute;display:block;font-family:Consolas;font-size:16px;color:white"
+        href="https://hfos.github.io/">my blog</a>
+-->
+
 
 
 <script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
