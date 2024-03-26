@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>格局决定成败</title>
-    <url>/2023/01/14/geJuJueDingChengBai/</url>
-    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
-</body></html>]]></content>
-  </entry>
-  <entry>
     <title>“一种轻量级平衡树”学习笔记</title>
     <url>/2023/09/12/splay_alternative_tech/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
@@ -84,6 +78,12 @@
 <h3 id="Decidable-x2F-Computable-languages"><a href="#Decidable-x2F-Computable-languages" class="headerlink" title="Decidable/Computable languages"></a>Decidable/Computable languages</h3><p>A TM is called a <em>decider</em> if and only if it halts on all inputs.</p>
 <p>A language $L$ is call <em>decidable/computable</em> if and only if $L=L(M)$ for some TM $M$.</p>
 <p>Regular languages $\subsetneq$ Deciable languages.</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>格局决定成败</title>
+    <url>/2023/01/14/geJuJueDingChengBai/</url>
+    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
 </body></html>]]></content>
   </entry>
   <entry>
