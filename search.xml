@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>格局决定成败</title>
+    <url>/2023/01/14/geju/</url>
+    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
+</body></html>]]></content>
+  </entry>
+  <entry>
     <title>神秘记录</title>
     <url>/2024/07/26/daily1/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat2.gif" alt="第二类猫猫虫走路"></p>
@@ -27,12 +33,6 @@
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">3e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">node</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	node* l;</span><br><span class="line">	node* r;</span><br><span class="line">	<span class="type">int</span> L,R;</span><br><span class="line">	<span class="type">int</span> sz;</span><br><span class="line">}Pool[maxn];</span><br><span class="line">node* pool[maxn];</span><br><span class="line"><span class="type">int</span> st=<span class="number">0</span>;</span><br><span class="line"><span class="function">node* <span class="title">newnode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	node* tmp=pool[st++];</span><br><span class="line">	tmp-&gt;l=tmp-&gt;r=<span class="literal">nullptr</span>;</span><br><span class="line">	<span class="keyword">return</span> tmp;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">delnode</span><span class="params">(node* tmp)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	pool[--st]=tmp;</span><br><span class="line">}</span><br><span class="line">vector&lt;node*&gt;vt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(node*&amp; root,<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"build "&lt;&lt;l&lt;&lt;" "&lt;&lt;r&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">if</span>(l==r)</span><br><span class="line">	{</span><br><span class="line">		root=vt[l];</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}</span><br><span class="line">	root=<span class="built_in">newnode</span>();</span><br><span class="line">	<span class="type">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">build</span>(root-&gt;l,l,mid);</span><br><span class="line">	<span class="built_in">build</span>(root-&gt;r,mid+<span class="number">1</span>,r);</span><br><span class="line">	root-&gt;sz=root-&gt;l-&gt;sz+root-&gt;r-&gt;sz;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"sz "&lt;&lt;root-&gt;sz&lt;&lt;" "&lt;&lt;1+root-&gt;l-&gt;sz+root-&gt;r-&gt;sz&lt;&lt;endl;</span></span><br><span class="line">}</span><br><span class="line">vector&lt;node*&gt;ll,mm,rr;</span><br><span class="line">node* tar;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">split</span><span class="params">(node* root,<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"split "&lt;&lt;root-&gt;L&lt;&lt;" "&lt;&lt;root-&gt;R&lt;&lt;" "&lt;&lt;root-&gt;sz&lt;&lt;endl;</span></span><br><span class="line">	<span class="type">int</span> R=root-&gt;sz;</span><br><span class="line">	<span class="keyword">if</span>(l&lt;=<span class="number">1</span>&amp;&amp;R&lt;=r)</span><br><span class="line">	{</span><br><span class="line">		<span class="comment">//cout&lt;&lt;"mm "&lt;&lt;root-&gt;L&lt;&lt;" "&lt;&lt;root-&gt;R&lt;&lt;endl;</span></span><br><span class="line">		mm.<span class="built_in">push_back</span>(root);</span><br><span class="line">		tar=root;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(R&lt;l)</span><br><span class="line">	{</span><br><span class="line">		<span class="comment">//cout&lt;&lt;"ll "&lt;&lt;root-&gt;L&lt;&lt;" "&lt;&lt;root-&gt;R&lt;&lt;endl;</span></span><br><span class="line">		ll.<span class="built_in">push_back</span>(root);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(r&lt;<span class="number">1</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="comment">//cout&lt;&lt;"rr "&lt;&lt;root-&gt;L&lt;&lt;" "&lt;&lt;root-&gt;R&lt;&lt;endl;</span></span><br><span class="line">		rr.<span class="built_in">push_back</span>(root);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span>(root-&gt;l==<span class="literal">nullptr</span>&amp;&amp;root-&gt;r==<span class="literal">nullptr</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(<span class="number">1</span>&lt;l)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">auto</span> tmp=<span class="built_in">newnode</span>();</span><br><span class="line">				tmp-&gt;L=root-&gt;L;</span><br><span class="line">				tmp-&gt;R=root-&gt;L+l<span class="number">-2</span>;</span><br><span class="line">				tmp-&gt;sz=l<span class="number">-1</span>;</span><br><span class="line">				mm.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">auto</span> tmp=<span class="built_in">newnode</span>();</span><br><span class="line">			tmp-&gt;L=root-&gt;L+l<span class="number">-1</span>;</span><br><span class="line">			tmp-&gt;R=root-&gt;L+r<span class="number">-1</span>;</span><br><span class="line">			tmp-&gt;sz=r-l+<span class="number">1</span>;</span><br><span class="line">			mm.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">			tar=tmp;</span><br><span class="line">			<span class="keyword">if</span>(r&lt;R)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">auto</span> tmp=<span class="built_in">newnode</span>();</span><br><span class="line">				tmp-&gt;L=root-&gt;L+r;</span><br><span class="line">				tmp-&gt;R=root-&gt;R;</span><br><span class="line">				tmp-&gt;sz=R-r;</span><br><span class="line">				mm.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(root-&gt;l!=<span class="literal">nullptr</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="built_in">split</span>(root-&gt;l,l,r);</span><br><span class="line">			l-=root-&gt;l-&gt;sz;</span><br><span class="line">			r-=root-&gt;l-&gt;sz; </span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(root-&gt;r!=<span class="literal">nullptr</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="built_in">split</span>(root-&gt;r,l,r);</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">delnode</span>(root);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">node* heng[<span class="number">300000</span>+<span class="number">5</span>];</span><br><span class="line">node* shu;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;maxn;++i) pool[i]=Pool+i;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="type">int</span> n,m,q;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m&gt;&gt;q;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"? "&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;<span class="number">300000</span>+<span class="number">5</span>;++i) heng[i]=<span class="built_in">newnode</span>(),heng[i]-&gt;L=<span class="number">1</span>+(i<span class="number">-1</span>)*m,heng[i]-&gt;R=m<span class="number">-1</span>+(i<span class="number">-1</span>)*m,heng[i]-&gt;sz=m<span class="number">-1</span>;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"t 1"&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i) </span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">auto</span> tmp=<span class="built_in">newnode</span>();</span><br><span class="line">		tmp-&gt;L=tmp-&gt;R=i*m;</span><br><span class="line">		tmp-&gt;sz=<span class="number">1</span>;</span><br><span class="line">		vt.<span class="built_in">push_back</span>(tmp); </span><br><span class="line">	}</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"t 1"&lt;&lt;endl;</span></span><br><span class="line">	<span class="built_in">build</span>(shu,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"t 1"&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)</span><br><span class="line">	{</span><br><span class="line">		<span class="type">int</span> x,y;</span><br><span class="line">		cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">		<span class="keyword">if</span>(y==m)</span><br><span class="line">		{</span><br><span class="line">			ll.<span class="built_in">clear</span>();rr.<span class="built_in">clear</span>();mm.<span class="built_in">clear</span>();vt.<span class="built_in">clear</span>();</span><br><span class="line">			<span class="built_in">split</span>(shu,x,x);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:ll) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:rr) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:mm) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			<span class="built_in">build</span>(shu,<span class="number">0</span>,vt.<span class="built_in">size</span>()<span class="number">-1</span>);</span><br><span class="line">			<span class="comment">//for(auto i:vt) cout&lt;&lt;"t "&lt;&lt;i-&gt;L&lt;&lt;" "&lt;&lt;i-&gt;R&lt;&lt;endl;</span></span><br><span class="line">			cout&lt;&lt;mm[<span class="number">0</span>]-&gt;L&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		{</span><br><span class="line">			ll.<span class="built_in">clear</span>();rr.<span class="built_in">clear</span>();mm.<span class="built_in">clear</span>();vt.<span class="built_in">clear</span>();</span><br><span class="line">			<span class="built_in">split</span>(heng[x],y,y);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:ll) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:mm) <span class="keyword">if</span>(i!=tar) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:rr) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			node* tmp=tar;</span><br><span class="line">			cout&lt;&lt;tmp-&gt;L&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">			ll.<span class="built_in">clear</span>();rr.<span class="built_in">clear</span>();mm.<span class="built_in">clear</span>();</span><br><span class="line">			<span class="built_in">split</span>(shu,x,x);</span><br><span class="line">			<span class="comment">//for(auto i:vt) cout&lt;&lt;"tq "&lt;&lt;i-&gt;L&lt;&lt;" "&lt;&lt;i-&gt;R&lt;&lt;endl;</span></span><br><span class="line">			vt.<span class="built_in">push_back</span>(mm[<span class="number">0</span>]);</span><br><span class="line">			<span class="comment">//for(auto i:vt) cout&lt;&lt;"tq "&lt;&lt;i-&gt;L&lt;&lt;" "&lt;&lt;i-&gt;R&lt;&lt;endl;</span></span><br><span class="line">			<span class="built_in">build</span>(heng[x],<span class="number">0</span>,vt.<span class="built_in">size</span>()<span class="number">-1</span>);</span><br><span class="line">			vt.<span class="built_in">clear</span>();</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:ll) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:rr) vt.<span class="built_in">push_back</span>(i);</span><br><span class="line">			vt.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">			<span class="comment">//for(auto i:vt) cout&lt;&lt;"t2 "&lt;&lt;i-&gt;L&lt;&lt;" "&lt;&lt;i-&gt;R&lt;&lt;endl;</span></span><br><span class="line">			<span class="built_in">build</span>(shu,<span class="number">0</span>,vt.<span class="built_in">size</span>()<span class="number">-1</span>);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>使用感想：常数比splay大，但是直观好学，是一种优秀的平衡树。</p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>格局决定成败</title>
-    <url>/2023/01/14/geju/</url>
-    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
 </body></html>]]></content>
   </entry>
   <entry>
@@ -85,69 +85,6 @@
 <p>复习时才发现平时去听课是真的没啥用，不仅学不到啥而且对应试也没任何帮助。感觉一学期本可以把这些时间用来干更有意义的事情。</p>
 <h3 id="2023-1-22"><a href="#2023-1-22" class="headerlink" title="2023-1-22"></a>2023-1-22</h3><p><img src="/images/xjtudaily.jpg" alt="成绩"></p>
 <p>对于算法课的评价：做的时候觉得题出得傻逼没啥关系最后给分高就行了，结果疑似随机给分。</p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>持续跟进：低智商人员如何自学 Great Ideas in Theoretical Computer Science</title>
-    <url>/2023/12/17/tcsdiy1/</url>
-    <content><![CDATA[<html><head></head><body><p>感觉太失败了，需要一些学习。</p>
-<p>开一个坑试图让自己填。<del>最后变成定理摘抄机器</del></p>
-<span id="more"></span>
-
-
-<h2 id="Deterministic-Finite-Automata"><a href="#Deterministic-Finite-Automata" class="headerlink" title="Deterministic Finite Automata"></a>Deterministic Finite Automata</h2><p>A Deterministic Finite Automata (DFA) $M$ is a 5-tuple</p>
-<p>$$M=(Q, \Sigma , \delta , q_0 ,F)$$</p>
-<p>where</p>
-<ul>
-<li>$Q$ is the <em>set of states</em>;</li>
-<li>$\Sigma$ is the <em>alphabet</em>;</li>
-<li>$\delta: Q \times \Sigma \rightarrow Q$ is the <em>transition function</em>; </li>
-<li>$q_0 \in Q$ is the <em>start state</em>;</li>
-<li>$F \subseteq Q$ is the <em>set of accepting states</em>.</li>
-</ul>
-<h3 id="DFA-accepting-a-string"><a href="#DFA-accepting-a-string" class="headerlink" title="DFA accepting a string"></a>DFA accepting a string</h3><p>$M=(Q, \Sigma , \delta , q_0 ,F)$ <em>accepts</em> the string $w=w_1 w_2 \dots w_n$, if and only if</p>
-<p>there exists a sequence of states $r_0,r_1,\dots ,r_n \in Q$, such that</p>
-<ul>
-<li>$r_0 = q_0$</li>
-<li>$\delta(r_{i-1},w_i)=r_i$ for each $i=\lbrace 1,2,\dots ,n \rbrace$</li>
-<li>$r_n \in F$</li>
-</ul>
-<h3 id="Language-decided-by-a-DFA"><a href="#Language-decided-by-a-DFA" class="headerlink" title="Language decided by a DFA"></a>Language decided by a DFA</h3><p>Let $M$ be a DFA. Then</p>
-<p>$$L(M)=\lbrace x\in \Sigma^* :M(x)\text{ accepts}\rbrace \subseteq \Sigma^*$$</p>
-<p>is the Language $M$ <em>decides</em>.</p>
-<h3 id="Regular-languages"><a href="#Regular-languages" class="headerlink" title="Regular languages"></a>Regular languages</h3><p>A language $L$ is called <em>regular</em> if and only if $L=L(M)$ for some DFA $M$.</p>
-<blockquote>
-<p>Q: Are all languages regular?</p>
-<p>A: No.</p>
-</blockquote>
-<p>Theorm:</p>
-<p>The language $L = \lbrace 0^n 1^n : n \in \mathbb N \rbrace$ is not regular.</p>
-<p>“Closure” properties:</p>
-<ul>
-<li><p>$L_1,L_2$ regular $\Longrightarrow$ $L_1 \cup L_2$ regular</p>
-</li>
-<li><p>$L_1,L_2$ regular $\Longrightarrow$ $L_1 \cdot L_2 = \lbrace xy: x\in L_1 , y \in L_2 \rbrace$ regular</p>
-</li>
-<li><p>$L$ regular $\Longrightarrow$ $L^* = \lbrace x_1 x_2 \dots x_k:k\ge 0 ,\forall i \ x_i \in L \rbrace$ regular</p>
-</li>
-</ul>
-<p>Fact: Starting with $\emptyset$ and $\lbrace a \rbrace$ for each $a \in \Sigma$ can construct any regular language using <em>union, concatenation, star</em>.</p>
-<h2 id="Turing-Machine"><a href="#Turing-Machine" class="headerlink" title="Turing Machine"></a>Turing Machine</h2><p>A Turing Machine (TM) $M$ is a 7-tuple</p>
-<p>$$M=(Q,\Sigma , \Gamma ,\delta , q_0 , q_{\text{acc}},q_{\text{rej}})$$</p>
-<p>where</p>
-<ul>
-<li>$Q$ is the <em>set of states</em>;</li>
-<li>$\Sigma$ is the <em>input alphabet</em> with $\sqcup \notin \Sigma$;</li>
-<li>$\Gamma$ is the <em>tape alphabet</em> with $\Sigma \subseteq \Gamma$ and $\sqcup \in \Sigma$;</li>
-<li>$\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \lbrace \text L,\text R\rbrace$ is the <em>transition function</em>;</li>
-<li>$q_0 \in Q$ is the <em>start state</em>;</li>
-<li>$q_{\text{acc}} \in Q$ is the <em>accept state</em>;</li>
-<li>$q_{\text{rej}} \in Q\backslash \lbrace q_{\text{acc}} \rbrace$ is the <em>reject state</em>.</li>
-</ul>
-<h3 id="Decidable-x2F-Computable-languages"><a href="#Decidable-x2F-Computable-languages" class="headerlink" title="Decidable/Computable languages"></a>Decidable/Computable languages</h3><p>A TM is called a <em>decider</em> if and only if it halts on all inputs.</p>
-<p>A language $L$ is call <em>decidable/computable</em> if and only if $L=L(M)$ for some TM $M$.</p>
-<p>Regular languages $\subsetneq$ Deciable languages.</p>
-<p>弃坑了，抄书没啥意思。</p>
 </body></html>]]></content>
   </entry>
   <entry>
@@ -296,6 +233,69 @@
 <p>组合数学：好课，感觉考得实际上也不难，只是我傻逼了考得比较垃圾。</p>
 <p>形式语言与编译：坨屎。</p>
 <p>计算机系统导论：无敌。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>持续跟进：低智商人员如何自学 Great Ideas in Theoretical Computer Science</title>
+    <url>/2023/12/17/tcsdiy1/</url>
+    <content><![CDATA[<html><head></head><body><p>感觉太失败了，需要一些学习。</p>
+<p>开一个坑试图让自己填。<del>最后变成定理摘抄机器</del></p>
+<span id="more"></span>
+
+
+<h2 id="Deterministic-Finite-Automata"><a href="#Deterministic-Finite-Automata" class="headerlink" title="Deterministic Finite Automata"></a>Deterministic Finite Automata</h2><p>A Deterministic Finite Automata (DFA) $M$ is a 5-tuple</p>
+<p>$$M=(Q, \Sigma , \delta , q_0 ,F)$$</p>
+<p>where</p>
+<ul>
+<li>$Q$ is the <em>set of states</em>;</li>
+<li>$\Sigma$ is the <em>alphabet</em>;</li>
+<li>$\delta: Q \times \Sigma \rightarrow Q$ is the <em>transition function</em>; </li>
+<li>$q_0 \in Q$ is the <em>start state</em>;</li>
+<li>$F \subseteq Q$ is the <em>set of accepting states</em>.</li>
+</ul>
+<h3 id="DFA-accepting-a-string"><a href="#DFA-accepting-a-string" class="headerlink" title="DFA accepting a string"></a>DFA accepting a string</h3><p>$M=(Q, \Sigma , \delta , q_0 ,F)$ <em>accepts</em> the string $w=w_1 w_2 \dots w_n$, if and only if</p>
+<p>there exists a sequence of states $r_0,r_1,\dots ,r_n \in Q$, such that</p>
+<ul>
+<li>$r_0 = q_0$</li>
+<li>$\delta(r_{i-1},w_i)=r_i$ for each $i=\lbrace 1,2,\dots ,n \rbrace$</li>
+<li>$r_n \in F$</li>
+</ul>
+<h3 id="Language-decided-by-a-DFA"><a href="#Language-decided-by-a-DFA" class="headerlink" title="Language decided by a DFA"></a>Language decided by a DFA</h3><p>Let $M$ be a DFA. Then</p>
+<p>$$L(M)=\lbrace x\in \Sigma^* :M(x)\text{ accepts}\rbrace \subseteq \Sigma^*$$</p>
+<p>is the Language $M$ <em>decides</em>.</p>
+<h3 id="Regular-languages"><a href="#Regular-languages" class="headerlink" title="Regular languages"></a>Regular languages</h3><p>A language $L$ is called <em>regular</em> if and only if $L=L(M)$ for some DFA $M$.</p>
+<blockquote>
+<p>Q: Are all languages regular?</p>
+<p>A: No.</p>
+</blockquote>
+<p>Theorm:</p>
+<p>The language $L = \lbrace 0^n 1^n : n \in \mathbb N \rbrace$ is not regular.</p>
+<p>“Closure” properties:</p>
+<ul>
+<li><p>$L_1,L_2$ regular $\Longrightarrow$ $L_1 \cup L_2$ regular</p>
+</li>
+<li><p>$L_1,L_2$ regular $\Longrightarrow$ $L_1 \cdot L_2 = \lbrace xy: x\in L_1 , y \in L_2 \rbrace$ regular</p>
+</li>
+<li><p>$L$ regular $\Longrightarrow$ $L^* = \lbrace x_1 x_2 \dots x_k:k\ge 0 ,\forall i \ x_i \in L \rbrace$ regular</p>
+</li>
+</ul>
+<p>Fact: Starting with $\emptyset$ and $\lbrace a \rbrace$ for each $a \in \Sigma$ can construct any regular language using <em>union, concatenation, star</em>.</p>
+<h2 id="Turing-Machine"><a href="#Turing-Machine" class="headerlink" title="Turing Machine"></a>Turing Machine</h2><p>A Turing Machine (TM) $M$ is a 7-tuple</p>
+<p>$$M=(Q,\Sigma , \Gamma ,\delta , q_0 , q_{\text{acc}},q_{\text{rej}})$$</p>
+<p>where</p>
+<ul>
+<li>$Q$ is the <em>set of states</em>;</li>
+<li>$\Sigma$ is the <em>input alphabet</em> with $\sqcup \notin \Sigma$;</li>
+<li>$\Gamma$ is the <em>tape alphabet</em> with $\Sigma \subseteq \Gamma$ and $\sqcup \in \Sigma$;</li>
+<li>$\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \lbrace \text L,\text R\rbrace$ is the <em>transition function</em>;</li>
+<li>$q_0 \in Q$ is the <em>start state</em>;</li>
+<li>$q_{\text{acc}} \in Q$ is the <em>accept state</em>;</li>
+<li>$q_{\text{rej}} \in Q\backslash \lbrace q_{\text{acc}} \rbrace$ is the <em>reject state</em>.</li>
+</ul>
+<h3 id="Decidable-x2F-Computable-languages"><a href="#Decidable-x2F-Computable-languages" class="headerlink" title="Decidable/Computable languages"></a>Decidable/Computable languages</h3><p>A TM is called a <em>decider</em> if and only if it halts on all inputs.</p>
+<p>A language $L$ is call <em>decidable/computable</em> if and only if $L=L(M)$ for some TM $M$.</p>
+<p>Regular languages $\subsetneq$ Deciable languages.</p>
+<p>弃坑了，抄书没啥意思。</p>
 </body></html>]]></content>
   </entry>
 </search>
