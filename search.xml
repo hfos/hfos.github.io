@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>格局决定成败</title>
-    <url>/2023/01/14/geju/</url>
-    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
-</body></html>]]></content>
-  </entry>
-  <entry>
     <title>“一种轻量级平衡树”学习笔记</title>
     <url>/2023/09/12/splay_alternative_tech/</url>
     <content><![CDATA[<html><head></head><body><p><img src="/images/bugcat.gif" alt="可爱猫猫虫"></p>
@@ -25,14 +19,64 @@
 </body></html>]]></content>
   </entry>
   <entry>
+    <title>《如何成为期末复习混子》：理解与实战</title>
+    <url>/2023/12/18/xjtudaily1/</url>
+    <content><![CDATA[<html><head></head><body><p>低智商人员对 <a href="https://yangdong02.github.io/2021/02/04/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E6%B7%B7%E5%AD%90/">如何成为期末复习混子</a> 的拙劣模仿。</p>
+<span id="more"></span>
+
+<h3 id="2023-12-18"><a href="#2023-12-18" class="headerlink" title="2023-12-18"></a>2023-12-18</h3><p>开局：一个学期没听课 + 欠着若干作业。</p>
+<p>目标：以尽可能低的成本快速通过所有课程，使得学期均分不小于 90。</p>
+<p>待考：</p>
+<table>
+<thead>
+<tr>
+<th>课程</th>
+<th>考试时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>概率统计与随机过程</td>
+<td>2024-01-02 15:00-17:30(星期二)</td>
+</tr>
+<tr>
+<td>毛泽东思想和中国特色社会主义理论体系概论</td>
+<td>2024-01-03 08:30-11:00(星期三)</td>
+</tr>
+<tr>
+<td>算法设计与分析</td>
+<td>2024-01-04 19:00-21:30(星期四)</td>
+</tr>
+<tr>
+<td>数学物理方程</td>
+<td>2024-01-09 08:30-11:00(星期二)</td>
+</tr>
+<tr>
+<td>大学物理II-2</td>
+<td>2024-01-10 15:00-17:30(星期三)</td>
+</tr>
+<tr>
+<td>电路</td>
+<td>2024-01-12 15:00-17:30(星期五)</td>
+</tr>
+</tbody></table>
+<p>指导思想：对着往年题拟合。</p>
+<h3 id="2023-12-30"><a href="#2023-12-30" class="headerlink" title="2023-12-30"></a>2023-12-30</h3><p>今天开始拟合概率论。</p>
+<h3 id="2023-1-2"><a href="#2023-1-2" class="headerlink" title="2023-1-2"></a>2023-1-2</h3><p>概率论检查 0.5 h 没查出啥错，希望能满分吧。</p>
+<h3 id="2023-1-4"><a href="#2023-1-4" class="headerlink" title="2023-1-4"></a>2023-1-4</h3><p>算法考试奇异搞笑之：本科生挑战 open problem；偏序问题不让排序。</p>
+<h3 id="2023-1-9"><a href="#2023-1-9" class="headerlink" title="2023-1-9"></a>2023-1-9</h3><p>厌学了。正在一天速通一门课。</p>
+<p>学这些课程本来就没啥意义，不如一天搞完跑路。</p>
+<p>复习时才发现平时去听课是真的没啥用，不仅学不到啥而且对应试也没任何帮助。感觉一学期本可以把这些时间用来干更有意义的事情。</p>
+<h3 id="2023-1-22"><a href="#2023-1-22" class="headerlink" title="2023-1-22"></a>2023-1-22</h3><p><img src="/images/xjtudaily.jpg" alt="成绩"></p>
+<p>对于算法课的评价：做的时候觉得题出得傻逼没啥关系最后给分高就行了，结果疑似随机给分。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
     <title>《如何成为期末复习混子》：灵活奋斗</title>
     <url>/2024/12/23/xjtudaily3/</url>
     <content><![CDATA[<html><head></head><body><p>典中典学期复刻。</p>
 <span id="more"></span>
 
-<h3 id="2024-12-23"><a href="#2024-12-23" class="headerlink" title="2024-12-23"></a>2024-12-23</h3><p>开局：</p>
-<p><img src="/images/xjtudaily3_1.jpg" alt="成绩"></p>
-<p>待考：</p>
+<h3 id="2024-12-23"><a href="#2024-12-23" class="headerlink" title="2024-12-23"></a>2024-12-23</h3><p>待考：</p>
 <table>
 <thead>
 <tr>
@@ -52,6 +96,13 @@
 <p>计组实验还只做了一个残废单周期，但是打算缓一缓，集中力量办大事，先把考试干掉。</p>
 <h3 id="2024-12-26"><a href="#2024-12-26" class="headerlink" title="2024-12-26"></a>2024-12-26</h3><p>计组超级原题大战，但是填空题喜提 -8。</p>
 <h3 id="2025-1-2"><a href="#2025-1-2" class="headerlink" title="2025-1-2"></a>2025-1-2</h3><p>计网超级原题大战，不知道能得几分。</p>
+<h3 id="2025-1-6"><a href="#2025-1-6" class="headerlink" title="2025-1-6"></a>2025-1-6</h3><p>今天终于补完了作业。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>格局决定成败</title>
+    <url>/2023/01/14/geju/</url>
+    <content><![CDATA[<html><head></head><body><p><a href="https://www.bilibili.com/video/BV1pN4y1c7At/">格局决定成败</a></p>
 </body></html>]]></content>
   </entry>
   <entry>
@@ -200,58 +251,6 @@
 <p>组合数学：好课，感觉考得实际上也不难，只是我傻逼了考得比较垃圾。</p>
 <p>形式语言与编译：坨屎。</p>
 <p>计算机系统导论：无敌。</p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>《如何成为期末复习混子》：理解与实战</title>
-    <url>/2023/12/18/xjtudaily1/</url>
-    <content><![CDATA[<html><head></head><body><p>低智商人员对 <a href="https://yangdong02.github.io/2021/02/04/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E6%B7%B7%E5%AD%90/">如何成为期末复习混子</a> 的拙劣模仿。</p>
-<span id="more"></span>
-
-<h3 id="2023-12-18"><a href="#2023-12-18" class="headerlink" title="2023-12-18"></a>2023-12-18</h3><p>开局：一个学期没听课 + 欠着若干作业。</p>
-<p>目标：以尽可能低的成本快速通过所有课程，使得学期均分不小于 90。</p>
-<p>待考：</p>
-<table>
-<thead>
-<tr>
-<th>课程</th>
-<th>考试时间</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>概率统计与随机过程</td>
-<td>2024-01-02 15:00-17:30(星期二)</td>
-</tr>
-<tr>
-<td>毛泽东思想和中国特色社会主义理论体系概论</td>
-<td>2024-01-03 08:30-11:00(星期三)</td>
-</tr>
-<tr>
-<td>算法设计与分析</td>
-<td>2024-01-04 19:00-21:30(星期四)</td>
-</tr>
-<tr>
-<td>数学物理方程</td>
-<td>2024-01-09 08:30-11:00(星期二)</td>
-</tr>
-<tr>
-<td>大学物理II-2</td>
-<td>2024-01-10 15:00-17:30(星期三)</td>
-</tr>
-<tr>
-<td>电路</td>
-<td>2024-01-12 15:00-17:30(星期五)</td>
-</tr>
-</tbody></table>
-<p>指导思想：对着往年题拟合。</p>
-<h3 id="2023-12-30"><a href="#2023-12-30" class="headerlink" title="2023-12-30"></a>2023-12-30</h3><p>今天开始拟合概率论。</p>
-<h3 id="2023-1-2"><a href="#2023-1-2" class="headerlink" title="2023-1-2"></a>2023-1-2</h3><p>概率论检查 0.5 h 没查出啥错，希望能满分吧。</p>
-<h3 id="2023-1-4"><a href="#2023-1-4" class="headerlink" title="2023-1-4"></a>2023-1-4</h3><p>算法考试奇异搞笑之：本科生挑战 open problem；偏序问题不让排序。</p>
-<h3 id="2023-1-9"><a href="#2023-1-9" class="headerlink" title="2023-1-9"></a>2023-1-9</h3><p>厌学了。正在一天速通一门课。</p>
-<p>学这些课程本来就没啥意义，不如一天搞完跑路。</p>
-<p>复习时才发现平时去听课是真的没啥用，不仅学不到啥而且对应试也没任何帮助。感觉一学期本可以把这些时间用来干更有意义的事情。</p>
-<h3 id="2023-1-22"><a href="#2023-1-22" class="headerlink" title="2023-1-22"></a>2023-1-22</h3><p><img src="/images/xjtudaily.jpg" alt="成绩"></p>
-<p>对于算法课的评价：做的时候觉得题出得傻逼没啥关系最后给分高就行了，结果疑似随机给分。</p>
 </body></html>]]></content>
   </entry>
 </search>
